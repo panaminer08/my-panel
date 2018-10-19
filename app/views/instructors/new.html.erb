@@ -1,0 +1,20 @@
+<%= form_with model: @instructor do |form| %>
+<div class="container">
+<%= form.label :username %>
+ <%= form.text_field :username %><br>
+ <%= form.label :first_name %>
+ <%= form.text_field :first_name %><br>
+ <%= form.label :last_name %>
+ <%= form.text_field :last_name %><br>
+ <%= form.label :password %>
+ <%= form.password_field :password %><br>
+ <%= form.label :birth_date %>
+ <%= form.date_field :birth_date %><br>
+ <%= form.label :salary %>
+ <%= form.number_field :salary %><br>
+ Highest completed<br>
+ <%= form.label :highest_completed_education %>
+ <%= form.select :highest_completed_education, options_for_select([['High School'], ['Bachelors'], ['MBA'], ['PHD']]) %><br>
+ <%= form.submit %>
+ </div>
+<% end %>

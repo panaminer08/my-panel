@@ -1,0 +1,14 @@
+
+<% @instructor.each do |i| %>
+<div class="container">
+<table>
+Instructor ID: <%= i.id %><br>
+   <tr> First Name<%= i.first_name %></tr><br>
+    <tr>Last Name<%= i.last_name %></tr><br>
+   <tr> Username<%= i.username %></tr><br>
+  <tr> Birthday<%= i.birth_date %></tr><br>
+   <tr> Highest Education<%= i.highest_completed_education %></tr><hr>
+</table>
+</div>
+<% end %>
+

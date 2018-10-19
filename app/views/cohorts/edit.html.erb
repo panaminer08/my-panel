@@ -1,0 +1,13 @@
+<%= form_with model: @cohort, url: "/cohorts/edit" do |form| %>
+ <%= form.label:name %>
+ <br> <%= form.text_field :name %><br>
+ <%= form.label :start_date %>
+ <br> <%= form.date_field :start_date %><br>
+ <%= form.label :end_date %>
+ <br> <%= form.date_field :end_date %><br>
+ <%= form.label :course %>
+ <br> <%= form.select :courses_id, options_for_select(@course, @cohort.courses_id) <br> %>
+ <%= form.label :teacher %>
+ <br> <%= form.select :teachers_id, options_for_select(@teacher, @cohort.teachers_id)  %><br>
+ <%= form.submit %>
+ <% end %>

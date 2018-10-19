@@ -1,0 +1,12 @@
+
+<% @course.each do |i| %>
+<div class="container">
+<div class="row">
+<div class="col s12 m4 l3">
+Course ID #: <%= i.id %>
+    Name: <%= i.name %>
+    In class hourse: <%= i.in_class_hours %>
+</diiv>
+</div>
+</div>
+<% end %>

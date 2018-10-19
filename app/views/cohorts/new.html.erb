@@ -1,0 +1,17 @@
+
+<%= form_with model: @cohort do |form| %>
+<div class="container">
+ <%= form.label :name %>
+ <br> <%= form.text_field :name %><br>
+ <%= form.label :start_date %>
+ <br> <%= form.date_field :start_date %><br>
+ <%= form.label :end_date %>
+ <br> <%= form.date_field :end_date %><br>
+ <%= form.label :course %>
+ <br> <%= form.select :course_id, options_for_select(@course, @cohort.courses_id) %> <br>
+ <%= form.label :instructor %>
+ <br> <%= form.select :instructor_id, options_for_select(@instructor, @cohort.instructors_id)  %><br>
+ <%= form.submit %>
+ </div>
+ <% end %>
+

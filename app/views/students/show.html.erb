@@ -1,0 +1,15 @@
+
+<% @student.each do |s| %>
+<div class="container">
+<div class="row">
+<div class="col s12 m4 l3">
+Student I.D. #<%= s.id %><br>
+    First Name: <%= s.first_name %><br>
+    Last Name: <%= s.last_name %><br>
+    Username: <%= s.username %><br>
+    Birth Day: <%= s.birth_date %><br>
+    Highest Education:<br><%= s.highest_completed_education %><br>
+</div>
+</div>
+</div>
+<% end %>
