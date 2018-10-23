@@ -1,18 +1,18 @@
 <%= form_with model: @instructor do |form| %>
 <div class="container">
-<%= form.label :username %>
+<%= form.label :username %><br>
  <%= form.text_field :username %><br>
- <%= form.label :first_name %>
+ <%= form.label :first_name %><br>
  <%= form.text_field :first_name %><br>
- <%= form.label :last_name %>
+ <%= form.label :last_name %><br>
  <%= form.text_field :last_name %><br>
- <%= form.label :password %>
- <%= form.password_field :password %><br>
- <%= form.label :birth_date %>
- <%= form.date_field :birth_date, stary_year: Date.today.year - 150, end_year date.today.year %><br>
- <%= form.label :salary %>
+ <%= form.label :encrypted_password %><br>
+ <%= form.password_field :encrypted_password %><br>
+ <%= form.label :birth_date %><br>
+ <%= form.date_field :birth_date %><br>
+ <%= form.label :salary %><br>
  <%= form.number_field :salary %><br>
- <%= form.label :highest_completed_education %>
+ <%= form.label :highest_completed_education %><br>
  <%= form.select :highest_completed_education, options_for_select([['High School'], ['Bachelors'], ['MBA'], ['PHD']]) %><br>
  <%= form.submit %>
  </div>
