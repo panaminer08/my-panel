@@ -13,9 +13,14 @@ class InstructorsController < ApplicationController
     def update
       @instructor = Instructor.find(params[:id])
       @instructor.update(instructor_params)
+      redirect_to instructor_path(@instructor)
     end
   
     def destroy
+      @instructor = Instructor.find(params[:id])
+      respond_to do |format|
+        format.js
+      end
     end
   
     def new
@@ -27,7 +32,7 @@ class InstructorsController < ApplicationController
       @instructor = Instructor.create(instructor_params)
       @instructor.save
   
-      redirect_to instructor_path
+      redirect_to '/instructors/show'
     end
   
     private

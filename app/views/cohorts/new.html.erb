@@ -8,9 +8,9 @@
  <%= form.label :end_date %>
  <br> <%= form.date_field :end_date %><br>
  <%= form.label :course %>
- <br> <%= form.select :course_id, options_for_select(@course, @cohort.courses_id) %> <br>
+ <br> <%= form.select :courses_id, options_for_select(@course, @cohort.courses_id) %> <br>
  <%= form.label :instructor %>
- <br> <%= form.select :instructor_id, options_for_select(@instructor, @cohort.instructors_id)  %><br>
+ <br> <%= form.select :instructors_id, options_for_select(@instructor, @cohort.instructors_id)  %><br>
  <%= form.submit %>
  </div>
  <% end %>

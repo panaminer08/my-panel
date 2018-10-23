@@ -1,12 +1,27 @@
+<%= link_to "Create Cohort", new_cohort_path %>
+
 
 <% @cohort.each do |c| %>
+<div id="delete<%= c.id %>">
 <div class="container">
-<div class="Row">
-<div class="col s6 m2 l1">
-<%= c.name %>
-<%= c.start_date %>
-<%= c.end_date %>
-</div>
+    <table style= "width: 100%">
+    <%= link_to "Edit", edit_cohort_path(c.id) %><br>
+    <%= link_to "delete", cohort_path(c.id), method: :delete, remote: true %>
+        <tr>
+            <th>Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>instructors_id</th>
+            <th>courses_id</th>
+        </tr>
+        <tr>
+            <td><%= c.name %></td>
+            <td><%= c.start_date %></td>
+            <td><%= c.end_date %></td>
+            <td><%= c.instructors_id %></td>
+            <td><%= c.courses_id %></td><hr>
+        </tr>
+    </table>
 </div>
 </div>
 <% end %>

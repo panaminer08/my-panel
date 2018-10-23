@@ -1,11 +1,20 @@
+<%= link_to "Create Student/Cohort", new_student_cohort_path %>
 
 <% @student_cohorts.each do |s| %>
+<div id="killer<%= s.id %>">
 <div class="container">
-<div class="row">
-<div class="col s12 m4 l3">
-<%= s.students_id %>
-<%= s.cohorts_id  %>
-</div>
+<table style= "width: 100%">
+<%= link_to "Edit", edit_student_cohort_path(s.id) %><br>
+<%= link_to "delete", student_cohort_path(s.id), method: :delete, remote: true %>
+    <tr>
+        <th>Students</th>
+        <th>Cohorts</th>
+    </tr>
+    <tr>
+        <td><%= s.student_id %></td>
+        <td><%= s.cohort_id  %></td>
+    </tr>
+</table>
 </div>
 </div>
 <% end %>

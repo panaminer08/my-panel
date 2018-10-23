@@ -1,14 +1,33 @@
+    <%= link_to "create Instructor", new_instructor_path(@instructor) %>
 
 <% @instructor.each do |i| %>
+<div id="delete<%= i.id%>"> 
 <div class="container">
-<table>
-Instructor ID: <%= i.id %><br>
-   <tr> First Name<%= i.first_name %></tr><br>
-    <tr>Last Name<%= i.last_name %></tr><br>
-   <tr> Username<%= i.username %></tr><br>
-  <tr> Birthday<%= i.birth_date %></tr><br>
-   <tr> Highest Education<%= i.highest_completed_education %></tr><hr>
+<table style= "width: 100%">
+<%= link_to(instructor_path(id: i.id), method: :delete, remove: true) do %>
+"Destroy"
+<% end %>
+<%= link_to "Edit", edit_instructor_path(i.id) %><br>
+<%= link_to "Delete", instructor_path(i.id), method: :delete, remote: true %>
+    <tr>
+        <th>Instructor ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+        <th>Birthday</th>
+        <th>Highest Education Achieved</th>
+    </tr>
+    <tr>
+        <td><%= i.id %></td>
+        <td><%= i.first_name %></td>
+        <td><%= i.last_name %></td>
+        <td><%= i.username %></td>
+        <td><%= i.birth_date %></td>
+        <td><%= i.highest_completed_education %></td>
+    </tr>
 </table>
 </div>
+</div>
+
 <% end %>
 

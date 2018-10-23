@@ -12,17 +12,22 @@ class CoursesController < ApplicationController
   
     def update
       @course = Course.find(params[:id])
-      @course.update(cohort_params)
-    end
-  
-    def destroy
+      @course.update(course_params)
+      redirect_to course_path
     end
   
     def create
       @course = Course.create(course_params)
       @course.save
   
-      redirect_to course_path
+      redirect_to course_path(@course)
+    end
+
+    def destroy
+      @course = Course.find(params[:id])
+      respond_to do |format|
+        format.js
+      end
     end
   
     def new
@@ -30,14 +35,10 @@ class CoursesController < ApplicationController
       @cohort = Cohort.all
     end
   
-    def logout
-      session[:admin_id] = nil
-      redirect_to admins_path
-    end
-  
     private
   
     def course_params
       params.require(:course).permit(:name, :in_class_hours)
     end
-end
+  end
+ 

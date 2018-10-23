@@ -1,12 +1,22 @@
+<%= link_to "Create Course", new_course_path %>
 
 <% @course.each do |i| %>
-<div class="container">
-<div class="row">
-<div class="col s12 m4 l3">
-Course ID #: <%= i.id %>
-    Name: <%= i.name %>
-    In class hourse: <%= i.in_class_hours %>
-</diiv>
-</div>
+<div id="delete<%= i.id %>">
+<div class="container"><br>
+    <table style= "width: 100%">
+    <%= link_to "Edit", edit_course_path(i.id) %><br>
+    <%= link_to "Delete", course_path(i.id), method: :delete, remote: true %>
+        <tr>
+            <th>Course ID</th>
+            <th>Name</th>
+            <th>In Class Hourse</th>
+        </tr>
+        <tr>
+            <td> <%= i.id %></td>
+            <td><%= i.name %></td>
+            <td> <%= i.in_class_hours %></td>
+        </tr>
+    </table>
+    </div>
 </div>
 <% end %>

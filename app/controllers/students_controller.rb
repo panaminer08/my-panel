@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
     def index
+      # @students = Student.all
     end
   
     def show
@@ -11,9 +12,16 @@ class StudentsController < ApplicationController
     end
   
     def update
+      @student = Student.find(params[:id])
+      @student = Student.update(student_params)
+      redirect_to student_path(@student)
     end
   
     def destroy
+      @student = Student.find(params[:id])
+      respond_to do |format|
+        format.js
+      end
     end
   
     def new
@@ -23,12 +31,14 @@ class StudentsController < ApplicationController
   
     def create
       @student = Student.create(student_params)
-      redirect_to 
+      @student.save
+
+      redirect_to "/students/show"
     end
   
     private
 
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :id, :username, :encrypted_password, :birth_date, :highest_completed_education)
+      params.require(:student).permit(:first_name, :last_name, :username, :encrypted_password, :birth_date, :highest_completed_education)
     end
 end

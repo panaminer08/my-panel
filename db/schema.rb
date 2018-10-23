@@ -17,18 +17,14 @@ ActiveRecord::Schema.define(version: 2018_10_17_223245) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
-    t.integer "start_date"
-    t.integer "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.bigint "instructors_id"
     t.bigint "courses_id"
-    t.bigint "student_cohorts_id"
-    t.bigint "students_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["courses_id"], name: "index_cohorts_on_courses_id"
     t.index ["instructors_id"], name: "index_cohorts_on_instructors_id"
-    t.index ["student_cohorts_id"], name: "index_cohorts_on_student_cohorts_id"
-    t.index ["students_id"], name: "index_cohorts_on_students_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -55,12 +51,12 @@ ActiveRecord::Schema.define(version: 2018_10_17_223245) do
   end
 
   create_table "student_cohorts", force: :cascade do |t|
-    t.bigint "students_id"
-    t.bigint "cohorts_id"
+    t.bigint "student_id"
+    t.bigint "cohort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cohorts_id"], name: "index_student_cohorts_on_cohorts_id"
-    t.index ["students_id"], name: "index_student_cohorts_on_students_id"
+    t.index ["cohort_id"], name: "index_student_cohorts_on_cohort_id"
+    t.index ["student_id"], name: "index_student_cohorts_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|

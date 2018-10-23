@@ -1,17 +1,11 @@
 
 
+<%= form_with model: @student_cohorts do |form| %>
 <div class="container">
-<%= form_with model: @student, url: "/students/new" do |form| %>
-    <%= link_to "Edit", edit_student %>
-  Firstname: <br> <%= form.text_field :first_name %><br>
-  Lastname: <br> <%= form.text_field :last_name %><br>
-  Username: <br> <%= form.text_field :username %><br>
-  <%= form.label :birthdate %><br>
-  <%= form.date_field :birth_date %><br>
-  <%= form.label :password %>
-  <br> <%= form.password_field :password %><br>
-  <%= form.label :highest_completed_education %><br>
- <br> <%= form.select :highest_completed_education, options_for_select(['High School','Bachelors','MBA','PHD']) %><br>
-  <%= form.submit %>
-<% end %>
-</div>
+ <%= form.label :student_id %>
+ <%= form.select :student_id, options_for_select(@student, @student_cohorts.student_id) %><br>
+ <%= form.label :cohort_id %>
+ <%= form.select :cohort_id, options_for_select(@cohort, @student_cohorts.cohort_id) %><br>
+ <%= form.submit %>
+ </div>
+ <% end %>
