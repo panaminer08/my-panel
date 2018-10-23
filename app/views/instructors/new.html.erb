@@ -9,7 +9,7 @@
  <%= form.label :password %>
  <%= form.password_field :password %><br>
  <%= form.label :birth_date %>
- <%= form.date_field :birth_date %><br>
+ <%= form.date_field :birth_date, stary_year: Date.today.year - 150, end_year date.today.year %><br>
  <%= form.label :salary %>
  <%= form.number_field :salary %><br>
  <%= form.label :highest_completed_education %>

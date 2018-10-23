@@ -4,5 +4,5 @@ class Student < ApplicationRecord
     has_many :cohorts, through: :student_cohorts
     validates :first_name, presence: true
     validates :encrypted_password, presence: true
-    validates :birth_date, :presence => true limit: 150 
+    validates :birth_date, :presence => true 
 end
