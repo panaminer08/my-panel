@@ -25,6 +25,7 @@ class CoursesController < ApplicationController
 
     def destroy
       @course = Course.find(params[:id])
+      @course.destroy
       respond_to do |format|
         format.js
       end

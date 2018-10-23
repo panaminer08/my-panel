@@ -4,9 +4,6 @@
 <div id="delete<%= i.id%>"> 
 <div class="container">
 <table style= "width: 100%">
-<%= link_to(instructor_path(id: i.id), method: :delete, remove: true) do %>
-"Destroy"
-<% end %>
 <%= link_to "Edit", edit_instructor_path(i.id) %><br>
 <%= link_to "Delete", instructor_path(i.id), method: :delete, remote: true %>
     <tr>

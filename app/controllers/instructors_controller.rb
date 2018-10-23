@@ -18,6 +18,7 @@ class InstructorsController < ApplicationController
   
     def destroy
       @instructor = Instructor.find(params[:id])
+      @instructor.destroy
       respond_to do |format|
         format.js
       end

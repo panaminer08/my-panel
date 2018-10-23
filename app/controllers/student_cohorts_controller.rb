@@ -21,6 +21,7 @@ class StudentCohortsController < ApplicationController
   
     def destroy
       @student_cohort = StudentCohort.find(params[:id])
+      @student_cohort.destroy
       respond_to do |format|
         format.js
       end
@@ -34,9 +35,7 @@ class StudentCohortsController < ApplicationController
   
     def create
       student_cohorts = StudentCohort.create(
-        student_cohorts_params
-        )
-
+        student_cohorts_params)
       student_cohorts.save
       redirect_to '/student_cohorts/show'
     end

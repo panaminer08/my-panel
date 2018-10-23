@@ -19,6 +19,7 @@ class StudentsController < ApplicationController
   
     def destroy
       @student = Student.find(params[:id])
+      @student.destroy
       respond_to do |format|
         format.js
       end
