@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2018_10_17_223245) do
     t.string "last_name"
     t.string "username"
     t.string "encrypted_password", default: "", null: false
-    t.date "birth_date"
+    t.integer "age"
     t.integer "salary"
     t.string "highest_completed_education"
     t.bigint "cohorts_id"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2018_10_17_223245) do
     t.string "last_name"
     t.string "username"
     t.string "encrypted_password", default: "", null: false
-    t.date "birth_date"
+    t.integer "age"
     t.string "highest_completed_education"
     t.bigint "cohorts_id"
     t.bigint "student_cohorts_id"

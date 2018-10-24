@@ -5,7 +5,7 @@ class CreateInstructors < ActiveRecord::Migration[5.2]
     t.string :last_name
     t.string :username
     t.string :encrypted_password, default: "", null: false
-    t.date :birth_date 
+    t.integer :age
     t.integer :salary
     t.string :highest_completed_education
     t.references :cohorts

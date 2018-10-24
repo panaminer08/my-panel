@@ -5,7 +5,7 @@ class CreateStudents < ActiveRecord::Migration[5.2]
     t.string :last_name
     t.string :username
     t.string :encrypted_password, default: "", null: false
-    t.date :birth_date
+    t.integer :age
     t.string :highest_completed_education
     t.references :cohorts
     t.references :student_cohorts
