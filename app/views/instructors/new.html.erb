@@ -8,9 +8,9 @@
  <%= form.label :encrypted_password %><br>
  <%= form.password_field :encrypted_password %><br>
  <%= form.label :age %><br>
- <%= form.number_field :age %><br>
+ <%= form.number_field :age, min: 0, max:150 %><br>
  <%= form.label :salary %><br>
- <%= form.number_field :salary %><br>
+ <%= form.number_field :salary, min:0 %><br>
  <%= form.label :highest_completed_education %><br>
  <%= form.select :highest_completed_education, options_for_select([['High School'], ['Bachelors'], ['MBA'], ['PHD']]) %><br>
  <%= form.submit %>
