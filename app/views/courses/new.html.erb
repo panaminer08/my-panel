@@ -3,7 +3,7 @@
 <%= form.label :name %><br>
 <%= form.text_field :name %><br>
 <%= form.label :in_class_hours %><br>
-<%= form.number_field :in_class_hours %><br>
+<%= form.number_field :in_class_hours, min: 0 %><br>
 <%= form.submit %>
 </div>
 <% end %>
