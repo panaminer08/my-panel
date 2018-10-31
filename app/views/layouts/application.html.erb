@@ -4,19 +4,24 @@
     <title>MyPanel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
 <nav>
-  <li><a href="/instructors/show">Instructors</a></li>
-  <li><a href="/students/show">Students</a></li>
-  <li><a href="/courses/show">Courses</a></li>
-  <li><a href="/cohorts/show">Cohorts</a></li>
-  <li><a href="/student_cohorts/show">Student/Cohort</a></li>
-</nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><i class="material-icons">button</i>The Panel</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/instructors/show"><i class="material-icons">teacher</i></a></li>
+        <li><a href="/students/show"><i class="material-icons">cloud</i></a></li>
+        <li><a href="courses/show"><i class="material-icons">refresh</i></a></li>
+        <li><a href="/student_cohorts/show"><i class="material-icons">iron</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
   <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
